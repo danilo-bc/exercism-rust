@@ -9,14 +9,14 @@ pub enum LogLevel {
 /// primary function for emitting logs
 pub fn log(level: LogLevel, message: &str) -> String {
     match level{
-        LogLevel::Info => return info(message),
-        LogLevel::Warning => return warn(message),
-        LogLevel::Error => return error(message),
-        LogLevel::Debug => return debug(message),
+        LogLevel::Info => info(message),
+        LogLevel::Warning => warn(message),
+        LogLevel::Error => error(message),
+        LogLevel::Debug => debug(message),
     }
 }
 pub fn info(message: &str) -> String {
-    "[INFO]: ".to_owned() + message
+    format!("[INFO]: {message}")
 }
 pub fn warn(message: &str) -> String {
     "[WARNING]: ".to_owned() + message
